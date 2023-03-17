@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title> サプーアプリ </title>
+    </head>
+    <body>
+        <h1>削除ページ</h1>
+
+        <form method="post" action="{{ url_for('delete')}}">
+        <table border="1">
+            <tr>
+                <th>入荷日</th>
+                <th>タイトル</th>
+                <th>金額</th>
+                <td></td>
+            </tr>
+            
+            {% for book in books %}
+                <tr>
+                    <th>{{ book.arrival_day }}</th>
+                    <th>{{ book.title }}</th>
+                    <th>{{ book.price }}</th>
+                    <td><input type="checkbox" name="del_list" value= "{{ book.title }}"> </td>
+                </tr> 
+            {% endfor %}
+
+        </table>
+        <br>
+        <input type="submit" value="削除">
+        </form>
+    </body>
+</html>

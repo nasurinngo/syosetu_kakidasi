@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>小説書き出しクイズ</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+        <link rel="icon" type="image/png" href="image/eggplant.png">
+        <style>
+            body {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box1"></div>
+            <h1>小説書き出しクイズ</h1>
+            <h2>難易度選択</h2>
+
+            <a href="{{ url_for('form') }}">
+                <button class="syo"style="background-color:#affad4;color:#000000;border-radius:5px">初級編</button>
+            </a>
+            <div>説明： 易しい問題が出るよ！</div>
+            <a href="{{ url_for('second') }}">
+                <button class="tyu"style="background-color:#affad4;color:#000000;border-radius:5px">中級編</button>
+            </a>
+            <div>説明： 少しむずかしいかも！</div>
+            <a href="{{ url_for('third') }}">
+                <button class="zyo"style="background-color:#affad4;color:#000000;border-radius:5px">上級編</button>
+            </a>
+            <div>説明： わかったらすごい！</div>
+            <!--
+                {% for book in books %}
+                    <a href="{{ url_for('form') }}">タイトル: {{ book.title }}</a>
+                    <p>説明: {{ book.price }}</p>
+                {% endfor %}   
+            -->
+            <a href="https://twitter.com/Nasubina_ra007" target="_blank">               
+                <button class="twi" style="background-color:#2C7CFF;color:#FFFFFF;border-radius:5px">ツイッタ┃</button>
+            </a>
+        </div>
+    </body>
+</html>
